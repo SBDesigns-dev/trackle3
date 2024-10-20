@@ -61,8 +61,8 @@ Thanks to TfL for the station names, the lines, the roundel, etc.<br>
 
 An Apache Licence for Trackle™️ is available <a href="/LICENCE">here</a>.<br><br>
 
-Copyright © 2024 Trackle™️<br>
-The name Trackle and its logo are trademarks of Trackle™️.<br><br>
+Copyright © 2024 SB Designs<br>
+The name Trackle and its logo are trademarks of SB Designs.<br><br>
 
 <!-- CONTACT --->
 
@@ -70,5 +70,5 @@ The name Trackle and its logo are trademarks of Trackle™️.<br><br>
 
 <ul>
   <li><a href="mailto:hello@trackle.serv00.net">Email: hello@trackle.serv00.net</a></li>
-  <li><a href="https://sbdesigns.netlify.app">SB Designs Website</a></li>
+  <li><a href="https://sbdesigns.pages.dev">SB Designs Website</a></li>
 </ul>
