@@ -55,7 +55,7 @@ Trackle™ is an engaging game where players test their knowledge by attempting 
 <!-- CREDITS & LICENCE --->
 
 <h3>Credits & Licence</h3>
-Trackle™️ is made by SB.<br>
+Trackle™️ is made by SB Designs<br>
 
 Thanks to TfL.<br>
 
