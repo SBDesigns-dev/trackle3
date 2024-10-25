@@ -57,7 +57,7 @@ Trackle™ is an engaging game where players test their knowledge by attempting 
 <h3>Credits & Licence</h3>
 Trackle™️ is made by SB.<br>
 
-Thanks to TfL for the station names, the lines, the roundel, etc.<br>
+Thanks to TfL.<br>
 
 An Apache Licence for Trackle™️ is available <a href="/LICENCE">here</a>.<br><br>
 
