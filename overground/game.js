@@ -1,4 +1,4 @@
-unction enterGuess() {
+function enterGuess() {
   app.enterGuess();
 }
 
