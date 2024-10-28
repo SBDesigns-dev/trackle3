@@ -13,10 +13,10 @@ function normalizeName(name) {
 function getStore() {
   return JSON.parse(window.localStorage.getItem("places") || "{}");
 }
+
 function setStore(places) {
   window.localStorage.setItem("places", JSON.stringify(places));
 }
-
 
 function addToStore(place) {
   let found = getStore();
@@ -101,7 +101,7 @@ App.prototype.displayScore = function () {
   document.getElementById("score").innerHTML = score;
   document.getElementById("total").innerHTML = this.placeList.length;
 
-  const shareText = I just played Trackle™ and named ${score} London Underground stations! You can play Trackle™ too:;
+  const shareText = `I just played Trackle™ and named ${score} London Underground stations! You can play Trackle™ too:`;
   const shareData = {
     title: "Trackle™ - The Tube Guessing Game",
     text: shareText,
