@@ -14,9 +14,7 @@ function getStore() {
   return JSON.parse(window.localStorage.getItem("places") || "{}");
 }
 
-function setStore(places) {
-  window.localStorage.setItem("places", JSON.stringify(places));
-}
+
 
 function addToStore(place) {
   let found = getStore();
