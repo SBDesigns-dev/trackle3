@@ -1,3 +1,7 @@
+unction enterGuess() {
+  app.enterGuess();
+}
+
 function normalizeName(name) {
   return name
     .toUpperCase()
