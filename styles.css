@@ -3,11 +3,13 @@
   --text-light: #000000; /* Light theme text color */
   --header-light: #ffffff; /* Light theme header background */
   --accent-light: #000f9f; /* Light theme accent color */
-  
+  --theme-color-light: #ffffff; /* Light theme color */
+
   --background-dark: #333333; /* Dark theme background */
   --text-dark: #ffffff; /* Dark theme text color */
   --header-dark: #333333; /* Dark theme header background */
   --accent-dark: #000f9f; /* Dark theme accent color */
+  --theme-color-dark: #333333; /* Dark theme color */
   --separator-color: #000f9f; /* Separator color for both themes */
 }
 
@@ -138,4 +140,14 @@ footer a:hover {
   #installPrompt p {
     color: var(--text-dark);
   }
+
+  /* Theme color for dark mode */
+  :root {
+    --theme-color: var(--theme-color-dark);
+  }
+}
+
+/* Light theme color */
+:root {
+  --theme-color: var(--theme-color-light);
 }
