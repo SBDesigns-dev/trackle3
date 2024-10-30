@@ -146,5 +146,24 @@
     </div>
 
     <script src="/script.js" type="module"></script>
+        <script>
+      function updateThemeColor() {
+        const metaThemeColor = document.querySelector("meta[name='theme-color']");
+        const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        // Update the content based on the current theme
+        if (isDarkMode) {
+          metaThemeColor.setAttribute("content", "#333333"); // Dark purple for dark theme
+        } else {
+          metaThemeColor.setAttribute("content", "#ffffff"); // Original purple for light theme
+        }
+      }
+
+      // Run the function to set the initial theme color
+      updateThemeColor();
+
+      // Listen for changes in theme preference
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateThemeColor);
+    </script>
 </body>
 </html>
