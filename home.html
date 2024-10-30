@@ -198,17 +198,14 @@
     </script>
 <script>
   function updateTheme() {
-    const metaThemeColor = document.querySelector("meta[name='theme-color']");
     const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
     if (isDarkMode) {
-      document.body.classList.remove("light");
       document.body.classList.add("dark");
-      metaThemeColor.setAttribute("content", "#333333"); // Dark theme color
+      document.body.classList.remove("light");
     } else {
-      document.body.classList.remove("dark");
       document.body.classList.add("light");
-      metaThemeColor.setAttribute("content", "#ffffff"); // Light theme color
+      document.body.classList.remove("dark");
     }
   }
 
@@ -218,6 +215,7 @@
   // Listen for changes in theme preference
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateTheme);
 </script>
+
 
 
   </body>
