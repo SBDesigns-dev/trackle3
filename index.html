@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,9 +23,18 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #ffffff;
+        background-color: #ffffff; /* Light theme background */
         font-family: Arial, sans-serif;
-        color: #333;
+        color: #333; /* Light theme text color */
+      }
+
+      @media (prefers-color-scheme: dark) {
+        html,
+        body,
+        iframe {
+          background-color: #333333; /* Dark theme background */
+          color: #ffffff; /* Dark theme text color */
+        }
       }
     </style>
     <meta http-equiv="refresh" content="3;url=home.html" />
