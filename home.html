@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trackle™</title>
@@ -13,188 +13,138 @@
     />
     <link rel="manifest" href="/manifest.json" />
     <link rel="stylesheet" href="/styles.css" />
-  </head>
-  <body>
+</head>
+<body>
     <header>
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Underground_%28no_text%29.svg"
-        alt="Logo"
-      /><br />
-      <h1>Trackle™</h1>
+        <img
+            src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Underground_%28no_text%29.svg"
+            alt="Logo"
+        /><br />
+        <h1>Trackle™</h1>
     </header>
 
     <main>
-      <p>
-        <b>What is Trackle™?</b> Trackle™ is a game, in which players attempt to
-        guess all the stations in: the London Underground; the DLR, Cable Car
-        and Elizabeth Line; the London Overground; or the London Trams.
-      </p>
+        <p>
+            <b>What is Trackle™?</b> Trackle™ is a game, in which players attempt to
+            guess all the stations in: the London Underground; the DLR, Cable Car
+            and Elizabeth Line; the London Overground; or the London Trams.
+        </p>
 
-      <div class="game-buttons">
-        <h2>Pick A Game Mode</h2>
-        <a href="/tube.html">
-          <button
+        <div class="game-buttons">
+            <h2>Pick A Game Mode</h2>
+            <a href="/tube.html">
+                <button
+                    class="styled-button"
+                    style="background-color: #000f9f"
+                    onmouseover="this.style.backgroundColor='#030f8a';"
+                    onmouseout="this.style.backgroundColor='#000f9f';"
+                >
+                    London Underground
+                </button>
+            </a>
+            <a href="/dlr.html">
+                <button
+                    class="styled-button"
+                    style="background-color: #60399e"
+                    onmouseover="this.style.backgroundColor='#3c2363';"
+                    onmouseout="this.style.backgroundColor='#60399E';"
+                >
+                    DLR, Cable Car &amp; Elizabeth Line
+                </button>
+            </a>
+            <a href="/overground.html">
+                <button
+                    class="styled-button"
+                    style="background-color: #fa7b05"
+                    onmouseover="this.style.backgroundColor='#c2640e';"
+                    onmouseout="this.style.backgroundColor='#FA7B05';"
+                >
+                    London Overground
+                </button>
+            </a>
+            <a href="/trams.html">
+                <button
+                    class="styled-button"
+                    style="background-color: #5fb526"
+                    onmouseover="this.style.backgroundColor='#4c8c22';"
+                    onmouseout="this.style.backgroundColor='#5FB526';"
+                >
+                    London Trams
+                </button>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            <b>Trackle™️ &#169; SB Designs 2024</b><br />The name Trackle and its
+            logo are trademarks of SB Designs.<br />Version 2.3.0
+        </p>
+        <!-- Consistent Share Button Design -->
+        <button
+            id="shareButton"
             class="styled-button"
             style="background-color: #000f9f"
             onmouseover="this.style.backgroundColor='#030f8a';"
             onmouseout="this.style.backgroundColor='#000f9f';"
-          >
-            London Underground
-          </button>
+        >
+            🔗 Share Trackle™
+        </button>
+        <a href="mailto:hello@trackle.serv00.net">
+            <button
+                class="styled-button"
+                style="background-color: #000f9f"
+                onmouseover="this.style.backgroundColor='#030f8a';"
+                onmouseout="this.style.backgroundColor='#000f9f';"
+            >
+                📧 Contact
+            </button>
         </a>
-        <a href="/dlr.html"
-          ><button
-            class="styled-button"
-            style="background-color: #60399e"
-            onmouseover="this.style.backgroundColor='#3c2363';"
-            onmouseout="this.style.backgroundColor='#60399E';"
-          >
-            DLR, Cable Car &amp; Elizabeth Line
-          </button></a
-        >
-        <a href="/overground.html"
-          ><button
-            class="styled-button"
-            style="background-color: #fa7b05"
-            onmouseover="this.style.backgroundColor='#c2640e';"
-            onmouseout="this.style.backgroundColor='#FA7B05';"
-          >
-            London Overground
-          </button></a
-        >
-        <a href="/trams.html"
-          ><button
-            class="styled-button"
-            style="background-color: #5fb526"
-            onmouseover="this.style.backgroundColor='#4c8c22';"
-            onmouseout="this.style.backgroundColor='#5FB526';"
-          >
-            London Trams
-          </button></a
-        >
-      </div>
-    </main>
-
-    <footer>
-      <p>
-        <b>Trackle™️ &#169; SB Designs 2024</b><br />The name Trackle and its
-        logo are trademarks of SB Designs.<br />Version 2.3.0
-      </p>
-      <!-- Consistent Share Button Design -->
-      <button
-        id="shareButton"
-        class="styled-button"
-        style="background-color: #000f9f"
-        onmouseover="this.style.backgroundColor='#030f8a';"
-        onmouseout="this.style.backgroundColor='#000f9f';"
-      >
-        🔗 Share Trackle™
-      </button>
-      <a href="mailto:hello@trackle.serv00.net"
-        ><button
-          class="styled-button"
-          style="background-color: #000f9f"
-          onmouseover="this.style.backgroundColor='#030f8a';"
-          onmouseout="this.style.backgroundColor='#000f9f';"
-        >
-          📧 Contact
-        </button></a
-      >
-      <a href="https://sbdesigns.pages.dev"
-        ><button
-          class="styled-button"
-          style="background-color: #000f9f"
-          onmouseover="this.style.backgroundColor='#030f8a';"
-          onmouseout="this.style.backgroundColor='#000f9f';"
-        >
-          🖱️ SB Designs
-        </button></a
-      >
-      <a href="https://github.com/SB-Designs/Trackle"
-        ><button
-          class="styled-button"
-          style="background-color: #000f9f"
-          onmouseover="this.style.backgroundColor='#030f8a';"
-          onmouseout="this.style.backgroundColor='#000f9f';"
-        >
-          📑 Source Code
-        </button></a
-      >
+        <a href="https://sbdesigns.pages.dev">
+            <button
+                class="styled-button"
+                style="background-color: #000f9f"
+                onmouseover="this.style.backgroundColor='#030f8a';"
+                onmouseout="this.style.backgroundColor='#000f9f';"
+            >
+                🖱️ SB Designs
+            </button>
+        </a>
+        <a href="https://github.com/SB-Designs/Trackle">
+            <button
+                class="styled-button"
+                style="background-color: #000f9f"
+                onmouseover="this.style.backgroundColor='#030f8a';"
+                onmouseout="this.style.backgroundColor='#000f9f';"
+            >
+                📑 Source Code
+            </button>
+        </a>
     </footer>
 
     <!-- Install prompt popup -->
     <div id="installPrompt">
-      <p>Install the Trackle™ app for a better experience!</p>
-      <button
-        id="installButton"
-        class="styled-button"
-        style="background-color: #000f9f"
-        onmouseover="this.style.backgroundColor='#030f8a';"
-        onmouseout="this.style.backgroundColor='#000f9f';"
-      >
-        Install
-      </button>
-      <button
-        id="closeButton"
-        class="styled-button close-btn"
-        style="background-color: #000f9f"
-        onmouseover="this.style.backgroundColor='#030f8a';"
-        onmouseout="this.style.backgroundColor='#000f9f';"
-      >
-        X
-      </button>
+        <p>Install the Trackle™ app for a better experience!</p>
+        <button
+            id="installButton"
+            class="styled-button"
+            style="background-color: #000f9f"
+            onmouseover="this.style.backgroundColor='#030f8a';"
+            onmouseout="this.style.backgroundColor='#000f9f';"
+        >
+            Install
+        </button>
+        <button
+            id="closeButton"
+            class="styled-button close-btn"
+            style="background-color: #000f9f"
+            onmouseover="this.style.backgroundColor='#030f8a';"
+            onmouseout="this.style.backgroundColor='#000f9f';"
+        >
+            Close
+        </button>
     </div>
 
-    <script>
-      // Install prompt functionality
-      let deferredPrompt;
-      const installPrompt = document.getElementById("installPrompt");
-      const installButton = document.getElementById("installButton");
-      const closeButton = document.getElementById("closeButton");
-
-      window.addEventListener("beforeinstallprompt", (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        installPrompt.style.display = "block";
-
-        installButton.addEventListener("click", () => {
-          installPrompt.style.display = "none";
-          deferredPrompt.prompt();
-          deferredPrompt.userChoice.then((choiceResult) => {
-            if (choiceResult.outcome === "accepted") {
-              console.log("User accepted the install prompt");
-            } else {
-              console.log("User dismissed the install prompt");
-            }
-            deferredPrompt = null;
-          });
-        });
-
-        closeButton.addEventListener("click", () => {
-          installPrompt.style.display = "none";
-        });
-      });
-
-      // Share functionality
-      const shareButton = document.getElementById("shareButton");
-
-      shareButton.addEventListener("click", async () => {
-        if (navigator.share) {
-          try {
-            await navigator.share({
-              title: "Trackle™",
-              text: "Play Trackle™️ today and attempt to guess all of the stations on the TfL network! Play now at https://trackle.glitch.me!",
-            });
-            console.log("Trackle™ shared successfully!");
-          } catch (error) {
-            console.error("Error sharing Trackle™:", error);
-          }
-        } else {
-          alert(
-            "Sharing is not supported on this browser. Try using a mobile device."
-          );
-        }
-      });
-    </script>
-  </body>
+    <script src="/script.js" type="module"></script>
+</body>
 </html>
