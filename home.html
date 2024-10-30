@@ -196,5 +196,26 @@
         }
       });
     </script>
+    <script>
+  function updateTheme() {
+    const metaThemeColor = document.querySelector("meta[name='theme-color']");
+    const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    if (isDarkMode) {
+      document.body.classList.add("dark");
+      metaThemeColor.setAttribute("content", "#333333"); // Dark theme color
+    } else {
+      document.body.classList.remove("dark");
+      metaThemeColor.setAttribute("content", "#ffffff"); // Light theme color
+    }
+  }
+
+  // Run the function to set the initial theme color
+  updateTheme();
+
+  // Listen for changes in theme preference
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateTheme);
+</script>
+
   </body>
 </html>
