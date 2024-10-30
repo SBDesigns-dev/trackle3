@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DLR, Cable Car &amp; Elizabeth Line | Trackle™</title>
-    <meta name="theme-color" content="#60399E" />
+    <meta name="theme-color" content="#60399E" /> <!-- Default theme color for light mode -->
     <link
       rel="icon"
       type="image/x-icon"
@@ -26,6 +25,25 @@
         overflow: hidden;
       }
     </style>
+    <script>
+      function updateThemeColor() {
+        const metaThemeColor = document.querySelector("meta[name='theme-color']");
+        const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        // Update the content based on the current theme
+        if (isDarkMode) {
+          metaThemeColor.setAttribute("content", "#4A2775"); // Dark purple for dark theme
+        } else {
+          metaThemeColor.setAttribute("content", "#60399E"); // Original purple for light theme
+        }
+      }
+
+      // Run the function to set the initial theme color
+      updateThemeColor();
+
+      // Listen for changes in theme preference
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateThemeColor);
+    </script>
   </head>
   <body>
     <iframe src="https://dlr-trackle.glitch.me"></iframe>
