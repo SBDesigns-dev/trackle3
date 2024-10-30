@@ -3,11 +3,13 @@
   --text-light: #000000; /* Light theme text color */
   --header-light: #ffffff; /* Light theme header background */
   --accent-light: #000f9f; /* Light theme accent color */
+  --separator-light: #000f9f; /* Light theme separator color */
   
   --background-dark: #333333; /* Dark theme background */
   --text-dark: #ffffff; /* Dark theme text color */
   --header-dark: #333333; /* Dark theme header background */
   --accent-dark: #333333; /* Dark theme accent color */
+  --separator-dark: #000f9f; /* Dark theme separator color */
 }
 
 body {
@@ -25,7 +27,7 @@ header {
   color: var(--text-light);
   padding: 20px;
   text-align: center;
-  border-bottom: 5px solid var(--accent-light);
+  border-bottom: 5px solid var(--separator-light); /* Light theme separator */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -75,7 +77,7 @@ footer {
   color: var(--text-light);
   text-align: center;
   padding: 10px;
-  border-top: 5px solid var(--accent-light);
+  border-top: 5px solid var(--separator-light); /* Light theme separator */
   margin-top: auto;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -121,13 +123,13 @@ footer a:hover {
   header {
     background-color: var(--header-dark);
     color: var(--text-dark);
-    border-bottom: 5px solid var(--accent-dark);
+    border-bottom: 5px solid var(--separator-dark); /* Dark theme separator */
   }
 
   footer {
     background-color: var(--header-dark);
     color: var(--text-dark);
-    border-top: 5px solid var(--accent-dark);
+    border-top: 5px solid var(--separator-dark); /* Dark theme separator */
   }
 
   #installPrompt {
