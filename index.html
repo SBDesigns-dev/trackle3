@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Loading Trackle™️</title>
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" /> <!-- Light theme color -->
     <link
       rel="icon"
       type="image/x-icon"
@@ -39,43 +39,23 @@
     </style>
     <meta http-equiv="refresh" content="3;url=home.html" />
     <script>
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker
-          .register("/service-worker.js")
-          .then((registration) => {
-            console.log(
-              "Service Worker registered with scope:",
-              registration.scope
-            );
-          })
-          .catch((error) => {
-            console.log("Service Worker registration failed:", error);
-          });
+      function updateThemeColor() {
+        const metaThemeColor = document.querySelector("meta[name='theme-color']");
+        const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        // Update the content based on the current theme
+        if (isDarkMode) {
+          metaThemeColor.setAttribute("content", "#333333"); // Dark theme color
+        } else {
+          metaThemeColor.setAttribute("content", "#ffffff"); // Light theme color
+        }
       }
 
-      document.addEventListener("DOMContentLoaded", function () {
-        const baseTitle = "Loading Trackle™️";
-        const loadingDots = ["", ".", "..", "..."];
-        let dotIndex = 0;
+      // Run the function to set the initial theme color
+      updateThemeColor();
 
-        function updateTitle() {
-          document.title = baseTitle + loadingDots[dotIndex];
-          dotIndex = (dotIndex + 1) % loadingDots.length;
-        }
-
-        setInterval(updateTitle, 500);
-
-        function checkConnection() {
-          if (!navigator.onLine) {
-            document.getElementById("iframeContainer").style.display = "none";
-            document.getElementById("offlineMessage").style.display = "block";
-          }
-        }
-
-        window.addEventListener("offline", checkConnection);
-
-        checkConnection();
-      });
+      // Listen for changes in theme preference
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateThemeColor);
     </script>
   </head>
   <body>
