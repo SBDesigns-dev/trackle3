@@ -1,11 +1,10 @@
-
 :root {
-  --background-dark: #ffffff;
-  --text-light: #000000;
-  --header-dark: #ffffff;
-  --button-dark: #000f9f;
-  --button-hover-dark: #030f8a;
-  --accent-color: #000f9f;
+  --background-dark: #333333; /* Dark background */
+  --text-light: #ffffff; /* Light text color */
+  --header-dark: #333333; /* Dark header background */
+  --button-dark: #000f9f; /* Dark blue button color */
+  --button-hover-dark: #030f8a; /* Dark blue hover color */
+  --accent-color: #000f9f; /* Accent color */
 }
 
 body {
@@ -60,14 +59,18 @@ main {
 .styled-button {
   padding: 10px 20px;
   border: none;
-  color: #ffffff;
+  color: var(--text-light); /* Light text color */
   font-size: 18px;
   cursor: pointer;
   border-radius: 5px;
+  background-color: var(--button-dark); /* Dark button color */
   transition: background-color 0.3s ease;
   font-family: "London Tube", sans-serif;
 }
 
+.styled-button:hover {
+  background-color: var(--button-hover-dark); /* Dark hover color */
+}
 
 footer {
   background-color: var(--header-dark);
@@ -97,7 +100,7 @@ footer a:hover {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  background-color: var(--background-dark);
+  background-color: #444; /* Dark background for prompt */
   border: 1px solid #ccc;
   padding: 15px;
   border-radius: 8px;
