@@ -1,14 +1,17 @@
 :root {
+  --background-light: #ffffff; /* Light background */
+  --text-light: #000000; /* Light text color */
+  --header-light: #ffffff; /* Light header background */
+  --button-light: #000f9f; /* Light button color */
+  --button-hover-light: #030f8a; /* Light button hover color */
   --background-dark: #333333; /* Dark background */
-  --text-light: #ffffff; /* Light text color */
   --header-dark: #333333; /* Dark header background */
-  --button-dark: #000f9f; /* Dark blue button color */
-  --button-hover-dark: #030f8a; /* Dark blue hover color */
-  --accent-color: #000f9f; /* Accent color */
+  --button-dark: #000f9f; /* Dark button color */
+  --button-hover-dark: #030f8a; /* Dark button hover color */
 }
 
 body {
-  background-color: var(--background-dark);
+  background-color: var(--background-light);
   color: var(--text-light);
   font-family: "London Tube", sans-serif;
   display: flex;
@@ -18,11 +21,11 @@ body {
 }
 
 header {
-  background-color: var(--header-dark);
+  background-color: var(--header-light);
   color: var(--text-light);
   padding: 20px;
   text-align: center;
-  border-bottom: 5px solid var(--accent-color);
+  border-bottom: 5px solid var(--button-light);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -59,25 +62,20 @@ main {
 .styled-button {
   padding: 10px 20px;
   border: none;
-  color: var(--text-light); /* Light text color */
+  color: #ffffff; /* Light text color */
   font-size: 18px;
   cursor: pointer;
   border-radius: 5px;
-  background-color: var(--button-dark); /* Dark button color */
   transition: background-color 0.3s ease;
   font-family: "London Tube", sans-serif;
 }
 
-.styled-button:hover {
-  background-color: var(--button-hover-dark); /* Dark hover color */
-}
-
 footer {
-  background-color: var(--header-dark);
+  background-color: var(--header-light);
   color: var(--text-light);
   text-align: center;
   padding: 10px;
-  border-top: 5px solid var(--accent-color);
+  border-top: 5px solid var(--button-light);
   margin-top: auto;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -111,4 +109,26 @@ footer a:hover {
 #installPrompt p {
   color: var(--text-light);
   margin-bottom: 10px;
+}
+
+/* Dark theme styles */
+body.dark {
+  background-color: var(--background-dark);
+  color: var(--text-light);
+}
+
+header.dark {
+  background-color: var(--header-dark);
+}
+
+footer.dark {
+  background-color: var(--header-dark);
+}
+
+.styled-button.dark {
+  background-color: var(--button-dark);
+}
+
+.styled-button.dark:hover {
+  background-color: var(--button-hover-dark);
 }
