@@ -1,14 +1,18 @@
 :root {
-  --background-dark: #ffffff;
-  --text-light: #000000;
-  --header-dark: #ffffff;
-  --button-dark: #000f9f;
-  --button-hover-dark: #030f8a;
-  --accent-color: #000f9f;
+  --background-light: #ffffff; /* Light theme background */
+  --text-light: #000000; /* Light theme text color */
+  --header-light: #ffffff; /* Light theme header background */
+  --accent-light: #000f9f; /* Light theme accent color */
+  
+  --background-dark: #333333; /* Dark theme background */
+  --text-dark: #ffffff; /* Dark theme text color */
+  --header-dark: #333333; /* Dark theme header background */
+  --accent-dark: #000f9f; /* Dark theme accent color */
+  --separator-color: #000f9f; /* Separator color for both themes */
 }
 
 body {
-  background-color: var(--background-dark);
+  background-color: var(--background-light);
   color: var(--text-light);
   font-family: "London Tube", sans-serif;
   display: flex;
@@ -18,11 +22,11 @@ body {
 }
 
 header {
-  background-color: var(--header-dark);
+  background-color: var(--header-light);
   color: var(--text-light);
   padding: 20px;
   text-align: center;
-  border-bottom: 5px solid var(--accent-color);
+  border-bottom: 5px solid var(--separator-color); /* Separator color */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -68,11 +72,11 @@ main {
 }
 
 footer {
-  background-color: var(--header-dark);
+  background-color: var(--header-light);
   color: var(--text-light);
   text-align: center;
   padding: 10px;
-  border-top: 5px solid var(--accent-color);
+  border-top: 5px solid var(--separator-color); /* Separator color */
   margin-top: auto;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -95,7 +99,7 @@ footer a:hover {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  background-color: var(--background-dark);
+  background-color: var(--background-light);
   border: 1px solid #ccc;
   padding: 15px;
   border-radius: 8px;
@@ -106,4 +110,32 @@ footer a:hover {
 #installPrompt p {
   color: var(--text-light);
   margin-bottom: 10px;
+}
+
+/* Dark theme styles */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+  }
+
+  header {
+    background-color: var(--header-dark);
+    color: var(--text-dark);
+    border-bottom: 5px solid var(--separator-color); /* Separator color */
+  }
+
+  footer {
+    background-color: var(--header-dark);
+    color: var(--text-dark);
+    border-top: 5px solid var(--separator-color); /* Separator color */
+  }
+
+  #installPrompt {
+    background-color: var(--background-dark);
+  }
+
+  #installPrompt p {
+    color: var(--text-dark);
+  }
 }
