@@ -1,10 +1,12 @@
 :root {
+  /* Light Theme Colors */
   --background-light: #ffffff; /* Light background */
   --text-light: #000000; /* Light text color */
   --header-light: #ffffff; /* Light header background */
   --button-light: #000f9f; /* Light button color */
   --button-hover-light: #030f8a; /* Light button hover color */
-  
+
+  /* Dark Theme Colors */
   --background-dark: #333333; /* Dark background */
   --text-dark: #ffffff; /* Dark text color */
   --header-dark: #333333; /* Dark header background */
@@ -14,8 +16,8 @@
 }
 
 body {
-  background-color: var(--background-dark);
-  color: var(--text-dark);
+  background-color: var(--background-light);
+  color: var(--text-light);
   font-family: "London Tube", sans-serif;
   display: flex;
   flex-direction: column;
@@ -24,8 +26,8 @@ body {
 }
 
 header {
-  background-color: var(--header-dark);
-  color: var(--text-dark);
+  background-color: var(--header-light);
+  color: var(--text-light);
   padding: 20px;
   text-align: center;
   border-bottom: 5px solid var(--accent-color);
@@ -65,22 +67,17 @@ main {
 .styled-button {
   padding: 10px 20px;
   border: none;
-  color: var(--text-dark); /* Light text color */
+  color: #ffffff;
   font-size: 18px;
   cursor: pointer;
   border-radius: 5px;
-  background-color: var(--button-dark); /* Dark button color */
   transition: background-color 0.3s ease;
   font-family: "London Tube", sans-serif;
 }
 
-.styled-button:hover {
-  background-color: var(--button-hover-dark); /* Dark hover color */
-}
-
 footer {
-  background-color: var(--header-dark);
-  color: var(--text-dark);
+  background-color: var(--header-light);
+  color: var(--text-light);
   text-align: center;
   padding: 10px;
   border-top: 5px solid var(--accent-color);
@@ -93,7 +90,7 @@ footer p {
 }
 
 footer a {
-  color: var(--text-dark);
+  color: var(--text-light);
   text-decoration: none;
 }
 
@@ -106,7 +103,7 @@ footer a:hover {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  background-color: #444; /* Dark background for prompt */
+  background-color: var(--background-light);
   border: 1px solid #ccc;
   padding: 15px;
   border-radius: 8px;
@@ -115,28 +112,35 @@ footer a:hover {
 }
 
 #installPrompt p {
-  color: var(--text-dark);
+  color: var(--text-light);
   margin-bottom: 10px;
 }
 
-/* Dark theme styles */
-body.light {
-  background-color: var(--background-light);
-  color: var(--text-light);
+/* Dark Theme Styles */
+body.dark {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
 }
 
-header.light {
-  background-color: var(--header-light);
+header.dark {
+  background-color: var(--header-dark);
+  color: var(--text-dark);
 }
 
-footer.light {
-  background-color: var(--header-light);
+footer.dark {
+  background-color: var(--header-dark);
+  color: var(--text-dark);
 }
 
-.styled-button.light {
-  background-color: var(--button-light);
+.styled-button.dark {
+  background-color: var(--button-dark);
+  color: var(--text-dark);
 }
 
-.styled-button.light:hover {
-  background-color: var(--button-hover-light);
+.styled-button.dark:hover {
+  background-color: var(--button-hover-dark);
+}
+
+#installPrompt.dark {
+  background-color: #444; /* Dark background for prompt */
 }
