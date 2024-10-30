@@ -134,7 +134,7 @@ footer.dark {
 
 .styled-button.dark {
   background-color: var(--button-dark);
-  color: var(--text-dark);
+  color: var(--text-dark); /* Change text color to dark text */
 }
 
 .styled-button.dark:hover {
