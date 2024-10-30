@@ -1,12 +1,10 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>London Underground | Trackle™</title>
-    <meta name="theme-color" content="#000f9f" />
+    <meta name="theme-color" content="#007bff" /> <!-- Default theme color for light mode -->
     <link
       rel="icon"
       type="image/x-icon"
@@ -27,6 +25,25 @@
         overflow: hidden;
       }
     </style>
+    <script>
+      function updateThemeColor() {
+        const metaThemeColor = document.querySelector("meta[name='theme-color']");
+        const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        // Update the content based on the current theme
+        if (isDarkMode) {
+          metaThemeColor.setAttribute("content", "#0056b3"); // Dark blue for dark theme
+        } else {
+          metaThemeColor.setAttribute("content", "#007bff"); // Light blue for light theme
+        }
+      }
+
+      // Run the function to set the initial theme color
+      updateThemeColor();
+
+      // Listen for changes in theme preference
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateThemeColor);
+    </script>
   </head>
   <body>
     <iframe src="https://tube-trackle.glitch.me"></iframe>
