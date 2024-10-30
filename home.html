@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trackle™</title>
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#333333" /> <!-- Dark theme color -->
     <link href="https://fonts.cdnfonts.com/css/london-tube" rel="stylesheet" />
     <link
       rel="icon"
@@ -13,6 +13,50 @@
     />
     <link rel="manifest" href="/manifest.json" />
     <link rel="stylesheet" href="/styles.css" />
+    <style>
+      body {
+        background-color: #333333; /* Dark theme background */
+        color: #ffffff; /* Light text color for better contrast */
+        font-family: Arial, sans-serif;
+      }
+
+      header {
+        text-align: center;
+      }
+
+      .game-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .styled-button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin: 5px;
+        transition: background-color 0.3s;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      /* Button colors for dark theme */
+      .btn-blue { background-color: #000f9f; }
+      .btn-purple { background-color: #60399e; }
+      .btn-orange { background-color: #fa7b05; }
+      .btn-green { background-color: #5fb526; }
+
+      /* Button hover effects */
+      .btn-blue:hover { background-color: #030f8a; }
+      .btn-purple:hover { background-color: #3c2363; }
+      .btn-orange:hover { background-color: #c2640e; }
+      .btn-green:hover { background-color: #4c8c22; }
+    </style>
   </head>
   <body>
     <header>
@@ -33,45 +77,17 @@
       <div class="game-buttons">
         <h2>Pick A Game Mode</h2>
         <a href="/tube.html">
-          <button
-            class="styled-button"
-            style="background-color: #000f9f"
-            onmouseover="this.style.backgroundColor='#030f8a';"
-            onmouseout="this.style.backgroundColor='#000f9f';"
-          >
-            London Underground
-          </button>
+          <button class="styled-button btn-blue">London Underground</button>
         </a>
-        <a href="/dlr.html"
-          ><button
-            class="styled-button"
-            style="background-color: #60399e"
-            onmouseover="this.style.backgroundColor='#3c2363';"
-            onmouseout="this.style.backgroundColor='#60399E';"
-          >
-            DLR, Cable Car &amp; Elizabeth Line
-          </button></a
-        >
-        <a href="/overground.html"
-          ><button
-            class="styled-button"
-            style="background-color: #fa7b05"
-            onmouseover="this.style.backgroundColor='#c2640e';"
-            onmouseout="this.style.backgroundColor='#FA7B05';"
-          >
-            London Overground
-          </button></a
-        >
-        <a href="/trams.html"
-          ><button
-            class="styled-button"
-            style="background-color: #5fb526"
-            onmouseover="this.style.backgroundColor='#4c8c22';"
-            onmouseout="this.style.backgroundColor='#5FB526';"
-          >
-            London Trams
-          </button></a
-        >
+        <a href="/dlr.html">
+          <button class="styled-button btn-purple">DLR, Cable Car &amp; Elizabeth Line</button>
+        </a>
+        <a href="/overground.html">
+          <button class="styled-button btn-orange">London Overground</button>
+        </a>
+        <a href="/trams.html">
+          <button class="styled-button btn-green">London Trams</button>
+        </a>
       </div>
     </main>
 
@@ -80,46 +96,21 @@
         <b>Trackle™️ &#169; SB Designs 2024</b><br />The name Trackle and its
         logo are trademarks of SB Designs.<br />Version 2.3.0
       </p>
-      <!-- Consistent Share Button Design -->
       <button
         id="shareButton"
-        class="styled-button"
-        style="background-color: #000f9f"
-        onmouseover="this.style.backgroundColor='#030f8a';"
-        onmouseout="this.style.backgroundColor='#000f9f';"
+        class="styled-button btn-blue"
       >
         🔗 Share Trackle™
       </button>
-      <a href="mailto:hello@trackle.serv00.net"
-        ><button
-          class="styled-button"
-          style="background-color: #000f9f"
-          onmouseover="this.style.backgroundColor='#030f8a';"
-          onmouseout="this.style.backgroundColor='#000f9f';"
-        >
-          📧 Contact
-        </button></a
-      >
-      <a href="https://sbdesigns.pages.dev"
-        ><button
-          class="styled-button"
-          style="background-color: #000f9f"
-          onmouseover="this.style.backgroundColor='#030f8a';"
-          onmouseout="this.style.backgroundColor='#000f9f';"
-        >
-          🖱️ SB Designs
-        </button></a
-      >
-      <a href="https://github.com/SB-Designs/Trackle"
-        ><button
-          class="styled-button"
-          style="background-color: #000f9f"
-          onmouseover="this.style.backgroundColor='#030f8a';"
-          onmouseout="this.style.backgroundColor='#000f9f';"
-        >
-          📑 Source Code
-        </button></a
-      >
+      <a href="mailto:hello@trackle.serv00.net">
+        <button class="styled-button btn-blue">📧 Contact</button>
+      </a>
+      <a href="https://sbdesigns.pages.dev">
+        <button class="styled-button btn-blue">🖱️ SB Designs</button>
+      </a>
+      <a href="https://github.com/SB-Designs/Trackle">
+        <button class="styled-button btn-blue">📑 Source Code</button>
+      </a>
     </footer>
 
     <!-- Install prompt popup -->
@@ -127,19 +118,13 @@
       <p>Install the Trackle™ app for a better experience!</p>
       <button
         id="installButton"
-        class="styled-button"
-        style="background-color: #000f9f"
-        onmouseover="this.style.backgroundColor='#030f8a';"
-        onmouseout="this.style.backgroundColor='#000f9f';"
+        class="styled-button btn-blue"
       >
         Install
       </button>
       <button
         id="closeButton"
-        class="styled-button close-btn"
-        style="background-color: #000f9f"
-        onmouseover="this.style.backgroundColor='#030f8a';"
-        onmouseout="this.style.backgroundColor='#000f9f';"
+        class="styled-button btn-blue close-btn"
       >
         X
       </button>
@@ -190,9 +175,7 @@
             console.error("Error sharing Trackle™:", error);
           }
         } else {
-          alert(
-            "Sharing is not supported on this browser. Try using a mobile device."
-          );
+          alert("Sharing is not supported on this browser. Try using a mobile device.");
         }
       });
     </script>
