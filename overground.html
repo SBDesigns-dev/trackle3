@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>London Overground | Trackle™</title>
-    <meta name="theme-color" content="#ef7b10" />
+    <meta name="theme-color" content="#ee7c0e" />
     <link
       rel="icon"
       type="image/x-icon"
@@ -30,4 +30,23 @@
   <body>
     <iframe src="https://lo-trackle.glitch.me"></iframe>
   </body>
+  <script>
+      function updateThemeColor() {
+        const metaThemeColor = document.querySelector("meta[name='theme-color']");
+        const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        // Update the content based on the current theme
+        if (isDarkMode) {
+          metaThemeColor.setAttribute("content", "#BD4B00"); // Dark purple for dark theme
+        } else {
+          metaThemeColor.setAttribute("content", "#ee7c0e"); // Original purple for light theme
+        }
+      }
+
+      // Run the function to set the initial theme color
+      updateThemeColor();
+
+      // Listen for changes in theme preference
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateThemeColor);
+    </script>
 </html>
