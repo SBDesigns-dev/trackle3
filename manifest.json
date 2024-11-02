@@ -1,11 +1,11 @@
 {
-  "name": "Trackle",
-  "short_name": "Trackle",
+  "name": "Trackle™️",
+  "short_name": "Trackle™️",
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
-  "description": "Track live tracking data efficiently.",
+  "description": "What is Trackle™? Trackle™ is a game, in which players attempt to guess all the stations in: the London Underground; the DLR, Cable Car and Elizabeth Line; the London Overground; or the London Trams.",
   "icons": [
     {
       "src": "windows11/SmallTile.scale-100.png",
