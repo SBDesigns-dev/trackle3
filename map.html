@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="manifest" href="/manifest.json" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Whole Tube Map | Trackle™</title>
+    <meta name="theme-color" content="#e11b25" /> <!-- Default theme color for light mode -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn.glitch.global/8357f303-720f-4e93-ab5a-fafe557be39c/Underground%20Roundel.ico?v=1697160561957"
+    />
+
+    <style>
+      iframe {
+        border: none;
+        width: 100%;
+        height: 100%;
+      }
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+    </style>
+    <script>
+      function updateThemeColor() {
+        const metaThemeColor = document.querySelector("meta[name='theme-color']");
+        const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        // Update the content based on the current theme
+        if (isDarkMode) {
+          metaThemeColor.setAttribute("content", "#911017"); // Dark purple for dark theme
+        } else {
+          metaThemeColor.setAttribute("content", "#e11b25"); // Original purple for light theme
+        }
+      }
+
+      // Run the function to set the initial theme color
+      updateThemeColor();
+
+      // Listen for changes in theme preference
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateThemeColor);
+    </script>
+  </head>
+  <body>
+    <iframe src="https://big-trackle.glitch.me"></iframe>
+  </body>
+</html>
