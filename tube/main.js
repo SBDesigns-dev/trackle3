@@ -64,7 +64,7 @@ class App {
 
 const roundelIcon = L.icon({
   iconUrl:
-    "https://cdn.freebiesupply.com/logos/large/2x/transport-for-london-1-logo-svg-vector.svg",
+    "https://cdn.glitch.global/8357f303-720f-4e93-ab5a-fafe557be39c/Underground%20roundel.svg?v=1697070706179",
   iconSize: [32, 32],
 });
 
