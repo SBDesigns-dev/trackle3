@@ -59,6 +59,8 @@ Trackle™️ is made by SB Designs<br>
 
 Thanks to TfL.<br>
 
+Thanks to <a href="https://jamiehaywood.com/loadingroundel">Jamie Haywood</a> for the loading Roundel.
+
 An Apache Licence for Trackle™️ is available <a href="/LICENCE">here</a>.<br><br>
 
 Copyright © 2024 SB Designs<br>
