@@ -64,7 +64,7 @@ class App {
 
 const roundelIcon = L.icon({
   iconUrl:
-    "https://cdn.glitch.global/8357f303-720f-4e93-ab5a-fafe557be39c/Underground%20roundel.svg?v=1697070706179",
+    "https://bradshaw.onourlines.co.uk/w/images/thumb/7/75/Underground_roundel.svg/640px-Underground_roundel.svg.png",
   iconSize: [32, 32],
 });
 
