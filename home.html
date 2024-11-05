@@ -14,6 +14,13 @@
     />
 
     <link rel="stylesheet" href="/styles.css" />
+    <script>
+        // Just add this listener to allow the default browser prompt
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Do not prevent default, letting the browser handle the prompt automatically
+  console.log('Install prompt event fired');
+});
+    </script>
 </head>
 <body>
     <header>
