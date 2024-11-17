@@ -1,29 +1,46 @@
-// Declare a variable to store the install event
+// Declare variable to store the deferred install event
 let deferredInstallPrompt;
+
+// Get reference to the install prompt UI elements
+const installPrompt = document.getElementById('installPrompt');
+const installButton = document.getElementById('installButton');
+const closeButton = document.getElementById('closeButton');
+
+// Hide the install prompt UI initially
+if (installPrompt) installPrompt.style.display = 'none';
 
 // Listen for the `beforeinstallprompt` event
 window.addEventListener('beforeinstallprompt', (event) => {
     // Prevent the mini-infobar from appearing
     event.preventDefault();
-    // Store the event for later use
+    // Store the event for triggering later
     deferredInstallPrompt = event;
 
-    // Automatically show the install prompt
-    showInstallPrompt();
+    // Show the custom install prompt
+    if (installPrompt) installPrompt.style.display = 'block';
 });
 
-// Function to show the PWA install prompt
-function showInstallPrompt() {
-    if (deferredInstallPrompt) {
-        deferredInstallPrompt.prompt(); // Show the install prompt
+// Handle the install button click
+if (installButton) {
+    installButton.addEventListener('click', async () => {
+        if (deferredInstallPrompt) {
+            // Show the browser install prompt
+            deferredInstallPrompt.prompt();
 
-        deferredInstallPrompt.userChoice.then((choiceResult) => {
-            if (choiceResult.outcome === 'accepted') {
-                console.log('User accepted the PWA install prompt');
-            } else {
-                console.log('User dismissed the PWA install prompt');
-            }
-            deferredInstallPrompt = null; // Reset the prompt variable
-        });
-    }
+            // Wait for the user's response
+            const choiceResult = await deferredInstallPrompt.userChoice;
+            console.log('User choice:', choiceResult.outcome);
+
+            // Hide the custom install prompt after action
+            if (installPrompt) installPrompt.style.display = 'none';
+            deferredInstallPrompt = null;
+        }
+    });
+}
+
+// Handle the close button click
+if (closeButton) {
+    closeButton.addEventListener('click', () => {
+        if (installPrompt) installPrompt.style.display = 'none';
+    });
 }
