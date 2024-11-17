@@ -1,10 +1,11 @@
-// Detect if the app is already installed
+// Detect if the app is installed
 const isAppInstalled = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
 
-// DOM elements for the custom install prompt
+// DOM elements for the custom prompt
 const installPrompt = document.getElementById('installPrompt');
 const installButton = document.createElement('button');
 const closeButton = document.createElement('button');
+const openInAppButton = document.createElement('button');
 
 // Add styles and content for buttons
 installButton.textContent = 'Install';
@@ -16,8 +17,17 @@ closeButton.textContent = 'Close';
 closeButton.classList.add('styled-button');
 closeButton.style.backgroundColor = 'var(--accent-light)';
 
-// Append buttons to the custom prompt
-installPrompt.appendChild(installButton);
+openInAppButton.textContent = 'Open in App';
+openInAppButton.classList.add('styled-button');
+openInAppButton.style.backgroundColor = 'var(--accent-light)';
+openInAppButton.style.marginRight = '10px';
+
+// Append buttons dynamically based on the app state
+if (!isAppInstalled) {
+  installPrompt.appendChild(installButton);
+} else {
+  installPrompt.appendChild(openInAppButton);
+}
 installPrompt.appendChild(closeButton);
 
 // Variable to hold the deferred install prompt event
@@ -41,7 +51,7 @@ window.addEventListener('beforeinstallprompt', (event) => {
   // Save the deferred prompt event for later use
   deferredInstallPrompt = event;
 
-  // If the app is not installed, show the custom prompt
+  // Show the custom install prompt only if the app is not installed
   if (!isAppInstalled) {
     showInstallPrompt();
   }
@@ -69,10 +79,19 @@ installButton.addEventListener('click', async () => {
   hideInstallPrompt();
 });
 
+// Handle the open-in-app button click
+openInAppButton.addEventListener('click', () => {
+  // Redirect to the app if running in standalone mode
+  if (isAppInstalled) {
+    console.log('Opening the app...');
+    window.location.href = '/'; // Update with the home route of your app
+  }
+});
+
 // Handle the close button click
 closeButton.addEventListener('click', hideInstallPrompt);
 
-// Optionally, hide the custom install prompt if the app is installed
+// Show the appropriate prompt on page load
 if (isAppInstalled) {
-  hideInstallPrompt();
+  showInstallPrompt();
 }
