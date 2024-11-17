@@ -155,7 +155,11 @@
       // Listen for changes in theme preference
       window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateThemeColor);
     </script>
-    <script src="pwa-install.js" defer></script>
+    <div id="installPrompt">
+  <p id="promptText"></p>
+</div>
+<script src="pwa-install.js" defer></script>
+
 
 </body>
 </html>
