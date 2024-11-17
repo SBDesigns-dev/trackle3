@@ -1,4 +1,4 @@
-<img src="/logo.png">
+<img src="/logo.png" height="70">
 <h1>Trackle™️</h1>
 
 <!-- CONTENTS --->
