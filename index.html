@@ -31,7 +31,7 @@
 
         #logo {
             opacity: 0;
-            animation: fadeIn 2s;
+            animation: fadeIn 2s forwards;
         }
 
         @keyframes fadeIn {
@@ -43,7 +43,6 @@
             }
         }
     </style>
-    <meta http-equiv="refresh" content="3;url=home.html" />
     <script>
         function updateThemeColor() {
             const metaThemeColor = document.querySelector("meta[name='theme-color']");
@@ -62,9 +61,14 @@
 
         // Listen for changes in theme preference
         window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateThemeColor);
+
+        // Redirect to home.html after 2 seconds
+        setTimeout(function() {
+            window.location.href = "home.html";
+        }, 2000);
     </script>
 </head>
 <body>
-    <img id="logo" src="/logo.png" alt="Trackle logo" width="800" height="800">
+    <img id="logo" src="/logo.png" alt="Trackle logo" width="200" height="200">
 </body>
 </html>
