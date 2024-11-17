@@ -1,97 +1,104 @@
-// Detect if the app is installed
-const isAppInstalled = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
-
 // DOM elements for the custom prompt
 const installPrompt = document.getElementById('installPrompt');
-const installButton = document.createElement('button');
-const closeButton = document.createElement('button');
-const openInAppButton = document.createElement('button');
+const promptText = document.getElementById('promptText');
 
-// Add styles and content for buttons
+// Create buttons
+const installButton = document.createElement('button');
+const openInAppButton = document.createElement('button');
+const closeButton = document.createElement('button');
+
+// Set button styles and text
 installButton.textContent = 'Install';
 installButton.classList.add('styled-button');
 installButton.style.backgroundColor = 'var(--accent-light)';
 installButton.style.marginRight = '10px';
-
-closeButton.textContent = 'Close';
-closeButton.classList.add('styled-button');
-closeButton.style.backgroundColor = 'var(--accent-light)';
 
 openInAppButton.textContent = 'Open in App';
 openInAppButton.classList.add('styled-button');
 openInAppButton.style.backgroundColor = 'var(--accent-light)';
 openInAppButton.style.marginRight = '10px';
 
-// Append buttons dynamically based on the app state
-if (!isAppInstalled) {
-  installPrompt.appendChild(installButton);
-} else {
-  installPrompt.appendChild(openInAppButton);
-}
-installPrompt.appendChild(closeButton);
+closeButton.textContent = 'Close';
+closeButton.classList.add('styled-button');
+closeButton.style.backgroundColor = 'var(--accent-light)';
 
-// Variable to hold the deferred install prompt event
+// Variable to track deferred install prompt
 let deferredInstallPrompt;
 
-// Function to display the custom install prompt
-function showInstallPrompt() {
-  installPrompt.style.display = 'block'; // Show the custom install prompt
+// Check if the app is installed and running in the browser
+const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+
+// Function to show the install or open-in-app prompt
+function showPrompt(isInstalled) {
+  // Clear previous content
+  installPrompt.innerHTML = '';
+  installPrompt.appendChild(promptText);
+
+  // Set prompt message and buttons
+  if (!isInstalled) {
+    promptText.textContent = 'Install the Trackle™ app for a better experience!';
+    installPrompt.appendChild(installButton);
+  } else {
+    promptText.textContent = 'Open the Trackle™ app for a better experience!';
+    installPrompt.appendChild(openInAppButton);
+  }
+
+  installPrompt.appendChild(closeButton);
+  installPrompt.style.display = 'block'; // Show the prompt
 }
 
-// Function to hide the custom install prompt
-function hideInstallPrompt() {
-  installPrompt.style.display = 'none'; // Hide the custom install prompt
+// Function to hide the prompt
+function hidePrompt() {
+  installPrompt.style.display = 'none';
 }
 
 // Listen for the `beforeinstallprompt` event
 window.addEventListener('beforeinstallprompt', (event) => {
-  // Prevent the default mini-infobar from appearing
-  event.preventDefault();
+  event.preventDefault(); // Prevent the default install prompt
+  deferredInstallPrompt = event; // Save the event for later
 
-  // Save the deferred prompt event for later use
-  deferredInstallPrompt = event;
-
-  // Show the custom install prompt only if the app is not installed
-  if (!isAppInstalled) {
-    showInstallPrompt();
+  // Show the prompt only if not standalone and not installed
+  if (!isStandalone) {
+    showPrompt(false);
   }
 });
 
 // Handle the install button click
 installButton.addEventListener('click', async () => {
   if (deferredInstallPrompt) {
-    // Show the browser's install prompt
+    // Show the browser's native install prompt
     deferredInstallPrompt.prompt();
-
-    // Wait for the user's response
     const choiceResult = await deferredInstallPrompt.userChoice;
+
     if (choiceResult.outcome === 'accepted') {
-      console.log('User accepted the PWA install prompt');
+      console.log('User accepted the install prompt');
     } else {
-      console.log('User dismissed the PWA install prompt');
+      console.log('User dismissed the install prompt');
     }
 
     // Clear the deferred prompt variable
     deferredInstallPrompt = null;
   }
 
-  // Hide the custom prompt after interaction
-  hideInstallPrompt();
+  hidePrompt();
 });
 
 // Handle the open-in-app button click
 openInAppButton.addEventListener('click', () => {
-  // Redirect to the app if running in standalone mode
-  if (isAppInstalled) {
-    console.log('Opening the app...');
-    window.location.href = '/'; // Update with the home route of your app
+  if (!isStandalone) {
+    // Redirect to the app's homepage
+    window.location.href = '/';
   }
 });
 
 // Handle the close button click
-closeButton.addEventListener('click', hideInstallPrompt);
+closeButton.addEventListener('click', hidePrompt);
 
-// Show the appropriate prompt on page load
-if (isAppInstalled) {
-  showInstallPrompt();
+// Show "Open in App" prompt if already installed but not running in standalone mode
+if (isStandalone === false && 'getInstalledRelatedApps' in navigator) {
+  navigator.getInstalledRelatedApps().then((apps) => {
+    if (apps.length > 0) {
+      showPrompt(true);
+    }
+  });
 }
