@@ -1,3 +1,4 @@
+<img src="/logo.png">
 <h1>Trackle™️</h1>
 
 <!-- CONTENTS --->
