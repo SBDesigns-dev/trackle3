@@ -2,13 +2,13 @@
   --background-light: #ffffff; /* Light theme background */
   --text-light: #000000; /* Light theme text color */
   --header-light: #ffffff; /* Light theme header background */
-  --accent-light: #000f9f; /* Light theme accent color */
+  --accent-light: #9A114F; /* Light theme accent color */
   
   --background-dark: #333333; /* Dark theme background */
   --text-dark: #ffffff; /* Dark theme text color */
   --header-dark: #333333; /* Dark theme header background */
-  --accent-dark: #000f9f; /* Dark theme accent color */
-  --separator-color: #000f9f; /* Separator color for both themes */
+  --accent-dark: #9A114F; /* Dark theme accent color */
+  --separator-color: #9A114F; /* Separator color for both themes */
 }
 
 body {
