@@ -21,7 +21,7 @@ Trackle™ is an engaging game where players test their knowledge by attempting 
 <!-- WEBSITE/APP INFORMATION --->
 
 <h3>Website/App Information</h3>
-<img alt="Version" src="https://img.shields.io/badge/Version-2.5.1-blue">
+<img alt="Version" src="https://img.shields.io/badge/Version-2.6.0-blue">
 <img alt="Status" src="https://img.shields.io/badge/Status-Website_Operational-green">
 
 <!-- HOW TO USE --->
@@ -55,11 +55,9 @@ Trackle™ is an engaging game where players test their knowledge by attempting 
 <!-- CREDITS & LICENCE --->
 
 <h3>Credits & Licence</h3>
-Trackle™️ is made by SB Designs<br>
+Trackle™️ is made by SB Designs™️<br>
 
-Thanks to TfL.<br>
-
-Thanks to <a href="https://jamiehaywood.com/loadingroundel">Jamie Haywood</a> for the loading Roundel.
+Thanks to TfL for the roundel, line names, etc. Trackle™️ is not affiliated with TfL or any other transport providers.<br>
 
 An Apache Licence for Trackle™️ is available <a href="/LICENCE">here</a>.<br><br>
 
