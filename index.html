@@ -1,73 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <link rel="manifest" href="/manifest.json" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Loading Trackle™️</title>
-    <meta name="theme-color" content="#ffffff" /> <!-- Light theme color -->
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="/logo.png"
-    />
+    <meta name="theme-color" content="#ffffff" /> <link rel="icon" type="image/x-icon" href="/logo.png" />
     <style>
-      html,
-      body,
-      iframe {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        width: 100%;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #ffffff; /* Light theme background */
-        font-family: Arial, sans-serif;
-        color: #333; /* Light theme text color */
-      }
-
-      @media (prefers-color-scheme: dark) {
-        html,
-        body,
-        iframe {
-          background-color: #333333; /* Dark theme background */
-          color: #ffffff; /* Dark theme text color */
+        html, body, iframe {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff; /* Light theme background */
+            font-family: Arial, sans-serif;
+            color: #333; /* Light theme text color */
         }
-      }
+
+        @media (prefers-color-scheme: dark) {
+            html, body, iframe {
+                background-color: #333333; /* Dark theme background */
+                color: #ffffff; /* Dark theme text color */
+            }
+        }
+
+        #logo {
+            opacity: 0;
+            animation: fadeIn 2s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
     </style>
     <meta http-equiv="refresh" content="3;url=home.html" />
     <script>
-      function updateThemeColor() {
-        const metaThemeColor = document.querySelector("meta[name='theme-color']");
-        const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        function updateThemeColor() {
+            const metaThemeColor = document.querySelector("meta[name='theme-color']");
+            const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-        // Update the content based on the current theme
-        if (isDarkMode) {
-          metaThemeColor.setAttribute("content", "#333333"); // Dark theme color
-        } else {
-          metaThemeColor.setAttribute("content", "#ffffff"); // Light theme color
+            // Update the content based on the current theme
+            if (isDarkMode) {
+                metaThemeColor.setAttribute("content", "#333333"); // Dark theme color
+            } else {
+                metaThemeColor.setAttribute("content", "#ffffff"); // Light theme color
+            }
         }
-      }
 
-      // Run the function to set the initial theme color
-      updateThemeColor();
+        // Run the function to set the initial theme color
+        updateThemeColor();
 
-      // Listen for changes in theme preference
-      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateThemeColor);
+        // Listen for changes in theme preference
+        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateThemeColor);
     </script>
-  </head>
-  <body>
-    <div id="iframeContainer">
-      <iframe
-        src="https://jamiehaywood.com/loadingroundel/"
-        frameborder="0"
-      ></iframe>
-    </div>
-    <div id="offlineMessage" style="display: none">
-      <p>You are offline. Please check your internet connection.</p>
-    </div>
-  </body>
+</head>
+<body>
+    <img id="logo" src="/logo.png" alt="Trackle logo" width="800" height="800">
+</body>
 </html>
