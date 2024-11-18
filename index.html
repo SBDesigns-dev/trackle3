@@ -66,7 +66,11 @@
         // Function to play sound after the page is loaded
         window.onload = function() {
             const sound = document.getElementById('sound');
-            sound.play();
+            setTimeout(function() {
+                sound.play().catch(function(error) {
+                    console.log('Autoplay was blocked:', error);
+                });
+            }, 100); // Small delay to ensure autoplay works
         }
 
         // Redirect to home.html after 3 seconds
