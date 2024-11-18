@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Loading Trackle™️</title>
-    <meta name="theme-color" content="#ffffff" /> 
-    <link rel="icon" type="image/x-icon" href="/logo.png" />
+    <meta name="theme-color" content="#ffffff" /> <link rel="icon" type="image/x-icon" href="/logo.png" />
     <style>
         html, body, iframe {
             margin: 0;
@@ -63,16 +62,6 @@
         // Listen for changes in theme preference
         window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateThemeColor);
 
-        // Function to play sound after the page is loaded
-        window.onload = function() {
-            const sound = document.getElementById('sound');
-            setTimeout(function() {
-                sound.play().catch(function(error) {
-                    console.log('Autoplay was blocked:', error);
-                });
-            }, 100); // Small delay to ensure autoplay works
-        }
-
         // Redirect to home.html after 3 seconds
         setTimeout(function() {
             window.location.href = "home.html";
@@ -80,7 +69,7 @@
     </script>
 </head>
 <body>
-    <audio id="sound" src="/start.mp3" preload="auto"></audio>
+    <audio id="sound" src="/start.mp3" autoplay preload="auto"></audio>
     <img id="logo" src="/logo.png" alt="Trackle logo" width="200" height="200">
 </body>
 </html>
