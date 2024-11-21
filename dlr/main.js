@@ -17,15 +17,22 @@ class App {
     console.log("create the map");
 
     // Initialize the map and set up the initial theme
-    map = L.map("map", { zoomControl: false }).setView([51.508328, -0.124819], 13);
+    map = L.map("map", { zoomControl: false }).setView(
+      [51.508328, -0.124819],
+      13
+    );
     this.setMapTheme();
 
     // Listen for changes in the device's theme preference
-    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
-      this.setMapTheme(); // Update map theme on device theme change
-    });
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", () => {
+        this.setMapTheme(); // Update map theme on device theme change
+      });
 
-    let foundPlaces = JSON.parse(window.localStorage.getItem("places-dlr") || "{}");
+    let foundPlaces = JSON.parse(
+      window.localStorage.getItem("places-dlr") || "{}"
+    );
     this.placeList.forEach((place) => {
       if (foundPlaces[place.name]) {
         place.showOverlay();
@@ -42,11 +49,13 @@ class App {
   }
 
   setMapTheme() {
-    const darkMode = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const darkMode =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
 
     const mapStyle = darkMode
       ? "https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoia2FpbGFuIiwiYSI6ImNreHh6MjNtNzJhd3oyb21wYjRkY2U0aGsifQ.tZzQ-GAom5_D8SLwrqmy-Q"
-      : "https://api.mapbox.com/styles/v1/kailan/clnmjy811006901qpergtfrho/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoia2FpbGFuIiwiYSI6ImNreHh6MjNtNzJhd3oyb21wYjRkY2U0aGsifQ.tZzQ-GAom5_D8SLwrqmy-Q";
+      : "https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoia2FpbGFuIiwiYSI6ImNreHh6MjNtNzJhd3oyb21wYjRkY2U0aGsifQ.tZzQ-GAom5_D8SLwrqmy-Q";
 
     // Remove existing tiles if they exist
     if (tiles) {
@@ -57,7 +66,6 @@ class App {
     tiles = L.tileLayer(mapStyle, {
       minZoom: 10,
       maxZoom: 16,
-      
     }).addTo(map);
   }
 }
