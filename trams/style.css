@@ -1,54 +1,39 @@
 :root {
-  --color-bg: rgb(95, 181, 38); /* Light green background */
-  --color-text-main: #000000; /* Black text */
-  --color-primary: #ffff00; /* Yellow primary color */
+  --color-bg: rgb(95, 181, 38);
+  --color-text-main: #000000;
+  --color-primary: #ffff00;
   --wrapper-height: 87vh;
-  --color-overlay: #ffffff; /* White overlay */
+  --color-overlay: #ffffff;
   --image-max-width: 300px;
   --image-margin: 3rem;
-  --font-family: "HK Grotesk";
-  --font-family-header: "HK Grotesk";
+  --font-family: "DM Sans", sans-serif; /* Updated font family */
+  --font-family-header: "DM Sans", sans-serif; /* Updated font family */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #2A8201; /* Dark green background */
-    --color-primary: #ffd700; /* Gold primary color for dark theme */
-    --color-overlay: #333333; /* Dark overlay */
-    --color-text-main: #ffffff; /* White text for dark theme */
+    --color-bg: #2A8201;
+    --color-primary: #2A8201;
+    --color-overlay: #333333;
+    --color-text-main: #ffffff;
   }
 }
 
-/* Original CSS Styles */
 * {
   box-sizing: border-box;
-}
-
-[hidden] {
-  display: none !important;
-}
-
-/* Import fonts */
-@font-face {
-  font-family: HK Grotesk;
-  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027") format("opentype");
-}
-@font-face {
-  font-family: HK Grotesk;
-  font-weight: bold;
-  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437") format("opentype");
 }
 
 body {
   padding: 0;
   margin: 0;
   font-family: var(--font-family);
-  background-color: var(--color-bg); /* Light theme background */
-  color: var(--color-text-main); /* Light theme text color */
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
 }
 
 h1 {
   font-size: 1.4rem;
+  font-family: var(--font-family-header);
 }
 
 .game {
@@ -69,143 +54,67 @@ h1 {
   z-index: 0;
 }
 
-.inputForm {
-  height: 100px;
-  width: 400px;
-  z-index: 1;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-bg);
+  opacity: 0.85; /* Translucent effect */
+  color: white;
+  padding: 0.5rem 1rem;
+  position: sticky; /* Makes the element sticky */
+  top: 0; /* Sticks to the top of the viewport */
+  z-index: 1000; /* Ensures it stays above other elements */
 }
 
-.pageOverlay {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  border-radius: 0 24px 0 0;
-  background-color: var(--color-overlay); /* Light theme overlay */
-  z-index: 1;
-  border: 1px solid var(--color-bg);
-}
 
-.credits {
-  padding: 8px;
-  z-index: 1;
-  font-size: 0.7rem;
-  border-top: 1px solid var(--color-bg);
+button {
+  background-color: var(--color-bg);
+  border-radius: 8px;
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: var(--font-family); /* Ensure button uses DM Sans */
+  padding: 0.5rem 1rem;
+  box-shadow: rgba(100, 100, 111, 0.8) 0px 7px 29px 0px;
+  border: none;
 }
 
 #scoreContainer {
-  padding: 1rem;
-  text-align: end;
-  font-size: 1.8rem; /* Keep original score container size */
+  width: 100%;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 1.2rem;
+  font-family: var(--font-family); /* Ensure score container uses DM Sans */
 }
 
 .formContainer {
   position: absolute;
-  top: 1rem;
-  z-index: 1;
-  padding: 0 1rem;
+  bottom: 0;
   width: 100%;
+  background-color: var(--color-overlay);
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
 }
 
 .form {
-  position: sticky;
-  max-width: 400px;
-  width: 100%;
   display: flex;
-  margin: 0 auto;
+  position: center;
   gap: 0.5rem;
+  width: 100%;
 }
 
 input {
   text-transform: uppercase;
-  width: 100%;
-  display: inline-block;
+  flex: 1;
   border: 2px solid var(--color-bg);
   border-radius: 8px;
-  box-sizing: border-box;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
+  font-family: var(--font-family); /* Ensure input uses DM Sans */
   box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 16px 0px;
-  z-index: 10;
 }
 
 input::placeholder {
   color: rgb(123, 134, 140);
-}
-
-#share svg {
-  width: 24px;
-  padding-top: 12px;
-  margin-top: -14px;
-  margin-left: 0.5rem;
-  margin-right: 4px;
-}
-
-.enterButton {
-  background-color: var(--color-bg);
-  border-radius: 8px;
-  cursor: pointer;
-  color: #ffffff;
-  font-weight: bold;
-  padding: 1rem;
-  box-shadow: rgba(100, 100, 111, 0.8) 0px 7px 29px 0px;
-  border: none;
-}
-
-.header {
-  max-width: 90vw;
-  margin: 1rem auto;
-  color: white;
-}
-
-#instructions p {
-  margin: 0 0 1rem 0;
-}
-
-.place-tooltip {
-  font-weight: bold;
-  color: var(--color-bg) !important;
-  margin-left: 18px !important;
-}
-
-.resetButton,
-.websiteButton {
-  background-color: var(--color-bg);
-  border-radius: 8px;
-  cursor: pointer;
-  color: #ffffff;
-  font-weight: bold;
-  padding: 1rem;
-  box-shadow: rgba(100, 100, 111, 0.8) 0px 7px 29px 0px;
-  border: none;
-}
-
-.maintenance-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: var(--color-bg);
-  color: var(--color-text-main);
-  text-align: center;
-}
-
-.maintenance-content {
-  max-width: 600px;
-  padding: 2rem;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 16px 0px;
-}
-
-.maintenance-content h1 {
-  font-family: var(--font-family-header);
-  color: var(--color-primary);
-}
-
-.maintenance-content p {
-  font-family: var(--font-family);
-}
-
-.maintenance-content img {
-  max-width: var(--image-max-width);
-  margin-top: var(--image-margin);
 }
