@@ -3,14 +3,14 @@
   <head>
     <link rel="manifest" href="/manifest.json" />
     <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>London Trams | Trackle™</title>
     <meta name="theme-color" content="#5fb526" />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="/logo.png"
-    />
+    <link rel="icon" type="image/x-icon" href="/logo.png" />
 
     <style>
       iframe {
@@ -51,7 +51,6 @@
         .matchMedia("(prefers-color-scheme: dark)")
         .addEventListener("change", updateThemeColor);
     </script>
-
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"
@@ -74,48 +73,28 @@
   <body>
     <div class="game">
       <div class="header">
-        <div id="instructions">
-          <h1>Trackle™ - London Trams</h1>
-          <h2>How many London Trams stops can you guess?</h2>
-        </div>
+        <a href="/home.html"><button class="backButton">Back</button></a>
+        <center><h1>London Trams</h1></center>
+        <button class="resetButton" onclick="app.resetGame()">Reset</button>
       </div>
 
       <div id="mapContainer">
         <div id="map"></div>
-        <div class="formContainer">
-          <div class="form">
-            <input id="guess" type="text" placeholder="Enter a stop" />
-            <button class="enterButton" onclick="enterGuess()">Guess</button>
-            <button class="resetButton" onclick="app.resetGame()">
-              Reset Game
-            </button>
-            <button
-              class="websiteButton"
-              onclick="window.top.location.href='/home.html'"
-            >
-              Exit Game
-            </button>
-          </div>
-        </div>
       </div>
-    </div>
 
-    <div class="pageOverlay">
-      <div id="scoreContainer">
-        Your score:
-        <strong><span id="score"></span> / <span id="total"></span></strong>
-      </div>
-      <div class="credits">
-        <p>
-          ©️ SB Designs 2024:
-          <u>
-            <a
-              href="https://sbdesigns.pages.dev"
-              style="text-decoration: none; color: inherit"
-              >Website</a
-            >
-          </u>
-        </p>
+      <div class="formContainer">
+        <div class="form">
+          <input id="guess" type="text" placeholder="Enter a station" />
+        </div>
+        <br />
+        <div id="scoreContainer">
+          <strong><span id="score"></span> / <span id="total"></span></strong>
+        </div>
+        <a
+          href="https://github.com/SB-Designs/Trackle?tab=readme-ov-file#credits--licence"
+          style="text-decoration: none; color: inherit; outline: none"
+          >&#8505;</a
+        >
       </div>
     </div>
   </body>
