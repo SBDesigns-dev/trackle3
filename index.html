@@ -5,8 +5,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Loading Trackle™️</title>
-    <meta name="theme-color" content="#ffffff" /> <link rel="icon" type="image/x-icon" href="/logo.png" />
+    <title>Trackle™</title>
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" type="image/x-icon" href="/logo.png" />
     <style>
         html, body, iframe {
             margin: 0;
@@ -17,51 +18,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #ffffff; /* Light theme background */
+            background-color: #ffffff; /* Permanent background color */
             font-family: Arial, sans-serif;
-            color: #333; /* Light theme text color */
-        }
-
-        @media (prefers-color-scheme: dark) {
-            html, body, iframe {
-                background-color: #333333; /* Dark theme background */
-                color: #ffffff; /* Dark theme text color */
-            }
+            color: #333;
         }
 
         #logo {
-            opacity: 0;
-            animation: fadeIn 3s forwards;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
+            opacity: 1; /* Remove fade effect */
         }
     </style>
     <script>
-        function updateThemeColor() {
-            const metaThemeColor = document.querySelector("meta[name='theme-color']");
-            const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-            // Update the content based on the current theme
-            if (isDarkMode) {
-                metaThemeColor.setAttribute("content", "#333333"); // Dark theme color
-            } else {
-                metaThemeColor.setAttribute("content", "#ffffff"); // Light theme color
-            }
-        }
-
-        // Run the function to set the initial theme color
-        updateThemeColor();
-
-        // Listen for changes in theme preference
-        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateThemeColor);
-
         // Redirect to home.html after 3 seconds
         setTimeout(function() {
             window.location.href = "home.html";
@@ -69,6 +35,7 @@
     </script>
 </head>
 <body>
-    <img id="logo" src="/logo.png" alt="Trackle logo" width="200" height="200">
+    <!-- Updated image source -->
+    <img id="logo" src="/logoA.gif" alt="Trackle logo" width="200" height="200">
 </body>
 </html>
