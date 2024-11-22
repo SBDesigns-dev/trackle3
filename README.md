@@ -22,7 +22,7 @@ Trackle™ is an engaging game where players test their knowledge by attempting 
 <!-- WEBSITE/APP INFORMATION --->
 
 <h3>Website/App Information</h3>
-<img alt="Version" src="https://img.shields.io/badge/Version-3.0.0-blue">
+<img alt="Version" src="https://img.shields.io/badge/Version-3.0.1-blue">
 <img alt="Status" src="https://img.shields.io/badge/Status-Website_Operational-green">
 
 <!-- HOW TO USE --->
