@@ -141,6 +141,7 @@ footer a:hover {
 }
 /* Modal overlay and content */
 /* Modal overlay and content */
+/* Modal overlay and content */
 .modal {
     display: none; /* Hidden by default */
     position: fixed;
@@ -151,22 +152,19 @@ footer a:hover {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
     backdrop-filter: blur(5px); /* Blurs the background */
-    display: flex; /* Enable flexbox */
-    justify-content: center; /* Horizontally center */
-    align-items: center; /* Vertically center */
 }
 
 .modal-content {
     position: relative;
     background-color: #ffffff;
+    margin: auto;
     padding: 20px;
     border-radius: 8px;
     max-width: 400px;
-    width: 90%; /* Responsive width */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1001; /* Ensure it stays above the blur effect */
     text-align: center;
 }
-
 
 /* Close button */
 .close-btn {
@@ -189,4 +187,3 @@ body.modal-open {
 body.modal-open .modal {
     pointer-events: auto; /* Enable interactions with the modal */
 }
-
