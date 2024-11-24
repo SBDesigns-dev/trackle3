@@ -139,3 +139,51 @@ footer a:hover {
     color: var(--text-dark);
   }
 }
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--background-light);
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.modal-content {
+    position: relative;
+}
+
+.modal button {
+    margin: 10px 0;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: red;
+}
+
+/* Dark theme styles for modal */
+@media (prefers-color-scheme: dark) {
+    .modal {
+        background-color: var(--background-dark);
+        color: var(--text-dark);
+    }
+
+    .close-btn {
+        color: var(--text-dark);
+    }
+}
+
