@@ -1,212 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="manifest" href="/manifest.json" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trackle™</title>
-    <meta name="theme-color" content="#ffffff" />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="/logo.png"
-    />
-
-    <link rel="stylesheet" href="/styles.css" />
-</head>
-<body>
-    <div id="installPrompt">
-        <p>Install the Trackle™ app for a better experience!</p>
-    </div>
-    <script src="pwa-install.js"></script>
-
-    <header>
-        <img
+   <head>
+      <link rel="manifest" href="/manifest.json" />
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Trackle™</title>
+      <meta name="theme-color" content="#ffffff" />
+      <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
+      <link
+         rel="icon"
+         type="image/x-icon"
+         href="/logo.png"
+         />
+      <link rel="stylesheet" href="/styles.css" />
+   </head>
+   <body>
+      <div id="installPrompt">
+         <p>Install the Trackle™ app for a better experience!</p>
+      </div>
+      <script src="pwa-install.js"></script>
+      <header>
+         <img
             src="/logo.png"
             alt="Logo"
-        />
-    </header>
-
-    <main>
-        <p>
+            />
+      </header>
+      <main>
+         <p>
             <b>What is Trackle™?</b> Trackle™ is a game, in which players attempt to
             guess all the stations in: the London Underground; the DLR, Cable Car
             and Elizabeth Line; the London Overground; or the London Trams.
-        </p>
-
-        <div class="game-buttons">
+         </p>
+         <div class="game-buttons">
             <h2>Pick A Game Mode</h2>
             <a href="/map.html">
-                <button
-                    class="styled-button"
-                    style="background-color: #e11b25"
-                    onmouseover="this.style.backgroundColor='#911017';"
-                    onmouseout="this.style.backgroundColor='#e11b25';"
-                >
-                    The Tube Map
-                </button>
+            <button
+               class="styled-button"
+               style="background-color: #e11b25"
+               onmouseover="this.style.backgroundColor='#911017';"
+               onmouseout="this.style.backgroundColor='#e11b25';"
+               >
+            The Tube Map
+            </button>
             </a>
             <a href="/tube.html">
-                <button
-                    class="styled-button"
-                    style="background-color: #000f9f"
-                    onmouseover="this.style.backgroundColor='#030f8a';"
-                    onmouseout="this.style.backgroundColor='#000f9f';"
-                >
-                    London Underground
-                </button>
+            <button
+               class="styled-button"
+               style="background-color: #000f9f"
+               onmouseover="this.style.backgroundColor='#030f8a';"
+               onmouseout="this.style.backgroundColor='#000f9f';"
+               >
+            London Underground
+            </button>
             </a>
             <a href="/dlr.html">
-                <button
-                    class="styled-button"
-                    style="background-color: #60399e"
-                    onmouseover="this.style.backgroundColor='#3c2363';"
-                    onmouseout="this.style.backgroundColor='#60399E';"
-                >
-                    DLR, Cable Car &amp; Elizabeth Line
-                </button>
+            <button
+               class="styled-button"
+               style="background-color: #60399e"
+               onmouseover="this.style.backgroundColor='#3c2363';"
+               onmouseout="this.style.backgroundColor='#60399E';"
+               >
+            DLR, Cable Car &amp; Elizabeth Line
+            </button>
             </a>
             <a href="/overground.html">
-                <button
-                    class="styled-button"
-                    style="background-color: #fa7b05"
-                    onmouseover="this.style.backgroundColor='#c2640e';"
-                    onmouseout="this.style.backgroundColor='#FA7B05';"
-                >
-                    London Overground
-                </button>
+            <button
+               class="styled-button"
+               style="background-color: #fa7b05"
+               onmouseover="this.style.backgroundColor='#c2640e';"
+               onmouseout="this.style.backgroundColor='#FA7B05';"
+               >
+            London Overground
+            </button>
             </a>
             <a href="/trams.html">
-                <button
-                    class="styled-button"
-                    style="background-color: #5fb526"
-                    onmouseover="this.style.backgroundColor='#4c8c22';"
-                    onmouseout="this.style.backgroundColor='#5FB526';"
-                >
-                    London Trams
-                </button>
+            <button
+               class="styled-button"
+               style="background-color: #5fb526"
+               onmouseover="this.style.backgroundColor='#4c8c22';"
+               onmouseout="this.style.backgroundColor='#5FB526';"
+               >
+            London Trams
+            </button>
             </a>
-        </div>
-    </main>
-
-    <footer>
-    <button
-        class="styled-button"
-        id="exploreMoreButton"
-        style="background-color: #9A114F;"
-        onmouseover="this.style.backgroundColor='#54092b';"
-        onmouseout="this.style.backgroundColor='#9A114F';"
-    >
-        🌟 Explore More
-    </button>
-
-    <!-- Popup Modal -->
- <div id="exploreModal" class="modal">
-    <div class="modal-content">
-        <button id="closeModal" class="close-btn">&times;</button>
-        <a href="https://sb-designs.gitbook.io/trackle">
-            <button class="styled-button" style="background-color: #9A114F;"
-                onmouseover="this.style.backgroundColor='#54092b';"
-                onmouseout="this.style.backgroundColor='#9A114F';">🗨️ Blog</button>
-        </a>
-        <a href="https://sbdesigns.pages.dev">
-            <button class="styled-button" style="background-color: #9A114F;"
-                onmouseover="this.style.backgroundColor='#54092b';"
-                onmouseout="this.style.backgroundColor='#9A114F';">🖱️ SB Designs</button>
-        </a>
-        <a href="https://github.com/SB-Designs/Trackle">
-            <button class="styled-button" style="background-color: #9A114F;"
-                onmouseover="this.style.backgroundColor='#54092b';"
-                onmouseout="this.style.backgroundColor='#9A114F';">📑 Source Code</button>
-        </a>
-        <a href="https://tally.so/r/31bK4p">
-            <button class="styled-button" style="background-color: #9A114F;"
-                onmouseover="this.style.backgroundColor='#54092b';"
-                onmouseout="this.style.backgroundColor='#9A114F';">👍 Join Trackle™️</button>
-        </a>
-    </div>
-</div>
-
-<br>
-                <p>
+         </div>
+      </main>
+      <footer>
+         <button
+            class="styled-button"
+            id="exploreMoreButton"
+            style="background-color: #9A114F;"
+            onmouseover="this.style.backgroundColor='#54092b';"
+            onmouseout="this.style.backgroundColor='#9A114F';"
+            >
+         🌟 Explore More
+         </button>
+         <!-- Popup Modal -->
+         <div id="exploreModal" class="modal">
+            <div class="modal-content">
+               <button id="closeModal" class="close-btn">&times;</button>
+               <a href="https://sb-designs.gitbook.io/trackle">
+               <button class="styled-button" style="background-color: #9A114F;"
+                  onmouseover="this.style.backgroundColor='#54092b';"
+                  onmouseout="this.style.backgroundColor='#9A114F';">🗨️ Blog</button>
+               </a>
+               <a href="https://sbdesigns.pages.dev">
+               <button class="styled-button" style="background-color: #9A114F;"
+                  onmouseover="this.style.backgroundColor='#54092b';"
+                  onmouseout="this.style.backgroundColor='#9A114F';">🖱️ SB Designs</button>
+               </a>
+               <a href="https://github.com/SB-Designs/Trackle">
+               <button class="styled-button" style="background-color: #9A114F;"
+                  onmouseover="this.style.backgroundColor='#54092b';"
+                  onmouseout="this.style.backgroundColor='#9A114F';">📑 Source Code</button>
+               </a>
+               <a href="https://tally.so/r/31bK4p">
+               <button class="styled-button" style="background-color: #9A114F;"
+                  onmouseover="this.style.backgroundColor='#54092b';"
+                  onmouseout="this.style.backgroundColor='#9A114F';">👍 Join Trackle™️</button>
+               </a>
+            </div>
+         </div>
+         <br>
+         <p>
             <b>Trackle™️ &#169; SB Designs 2024</b><br />The name Trackle and its
             logo are trademarks of SB Designs.<br/>Thanks to TfL for the roundel, line names, etc.<br>Trackle™️ is not affiliated with TfL or any other transport providers.<br>Version 3.0.1
-        </p>
-    </footer>
-
-    <!-- Install prompt popup -->
-    <div id="installPrompt">
-        <p>Install the Trackle™ app for a better experience!</p>
-        <button
+         </p>
+      </footer>
+      <!-- Install prompt popup -->
+      <div id="installPrompt">
+         <p>Install the Trackle™ app for a better experience!</p>
+         <button
             id="installButton"
             class="styled-button"
             style="background-color: #000f9f"
             onmouseover="this.style.backgroundColor='#030f8a';"
             onmouseout="this.style.backgroundColor='#000f9f';"
-        >
-            Install
-        </button>
-        <button
+            >
+         Install
+         </button>
+         <button
             id="closeButton"
             class="styled-button close-btn"
             style="background-color: #000f9f"
             onmouseover="this.style.backgroundColor='#030f8a';"
             onmouseout="this.style.backgroundColor='#000f9f';"
-        >
-            Close
-        </button>
-    </div>
-
-    <script src="/script.js" type="module"></script>
-        <script>
-      function updateThemeColor() {
-        const metaThemeColor = document.querySelector("meta[name='theme-color']");
-        const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-        // Update the content based on the current theme
-        if (isDarkMode) {
-          metaThemeColor.setAttribute("content", "#333333"); // Dark purple for dark theme
-        } else {
-          metaThemeColor.setAttribute("content", "#ffffff"); // Original purple for light theme
-        }
-      }
-
-      // Run the function to set the initial theme color
-      updateThemeColor();
-
-      // Listen for changes in theme preference
-      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateThemeColor);
-    </script>
-    <script>document.addEventListener("DOMContentLoaded", () => {
-    const exploreButton = document.getElementById("exploreMoreButton");
-    const exploreModal = document.getElementById("exploreModal");
-    const closeModal = document.getElementById("closeModal");
-
-    // Show modal when "Explore More" is clicked
-    exploreButton.addEventListener("click", () => {
-        exploreModal.style.display = "block";
-        document.body.classList.add("modal-open"); // Add blur and interaction block
-    });
-
-    // Hide modal when "X" button is clicked
-    closeModal.addEventListener("click", () => {
-        exploreModal.style.display = "none";
-        document.body.classList.remove("modal-open"); // Remove blur and interaction block
-    });
-
-    // Hide modal when clicking outside the modal content
-    window.addEventListener("click", (event) => {
-        if (event.target === exploreModal) {
-            exploreModal.style.display = "none";
-            document.body.classList.remove("modal-open");
-        }
-    });
-});
-
-    </script>
-    <script src="pwa-install.js" defer></script>
-
-
-</body>
+            >
+         Close
+         </button>
+      </div>
+      <script src="/script.js" type="module"></script>
+      <script>
+         function updateThemeColor() {
+           const metaThemeColor = document.querySelector("meta[name='theme-color']");
+           const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+         
+           // Update the content based on the current theme
+           if (isDarkMode) {
+             metaThemeColor.setAttribute("content", "#333333"); // Dark purple for dark theme
+           } else {
+             metaThemeColor.setAttribute("content", "#ffffff"); // Original purple for light theme
+           }
+         }
+         
+         // Run the function to set the initial theme color
+         updateThemeColor();
+         
+         // Listen for changes in theme preference
+         window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateThemeColor);
+      </script>
+      <script>document.addEventListener("DOMContentLoaded", () => {
+         const exploreButton = document.getElementById("exploreMoreButton");
+         const exploreModal = document.getElementById("exploreModal");
+         const closeModal = document.getElementById("closeModal");
+         
+         // Show modal when "Explore More" is clicked
+         exploreButton.addEventListener("click", () => {
+             exploreModal.style.display = "block";
+             document.body.classList.add("modal-open"); // Add blur and interaction block
+         });
+         
+         // Hide modal when "X" button is clicked
+         closeModal.addEventListener("click", () => {
+             exploreModal.style.display = "none";
+             document.body.classList.remove("modal-open"); // Remove blur and interaction block
+         });
+         
+         // Hide modal when clicking outside the modal content
+         window.addEventListener("click", (event) => {
+             if (event.target === exploreModal) {
+                 exploreModal.style.display = "none";
+                 document.body.classList.remove("modal-open");
+             }
+         });
+         });
+         
+      </script>
+      <script src="pwa-install.js" defer></script>
+   </body>
 </html>
