@@ -91,45 +91,35 @@
     </main>
 
     <footer>
-        <a href="https://sb-designs.gitbook.io/trackle">
-        <button        
-            class="styled-button"
-            style="background-color: #9A114F"
-            onmouseover="this.style.backgroundColor='#54092b';"
-            onmouseout="this.style.backgroundColor='#9A114F';">
-            🗨️ Blog
-        </button>
-        </a>
-        <a href="https://sbdesigns.pages.dev">
-            <button
-                class="styled-button"
-                style="background-color: #9A114F"
-                onmouseover="this.style.backgroundColor='#54092b';"
-                onmouseout="this.style.backgroundColor='#9A114F';"
-            >
-                🖱️ SB Designs
-            </button>
-        </a>
-        <a href="https://github.com/SB-Designs/Trackle">
-            <button
-                class="styled-button"
-                style="background-color: #9A114F"
-                onmouseover="this.style.backgroundColor='#54092b';"
-                onmouseout="this.style.backgroundColor='#9A114F';"
-            >
-                📑 Source Code
-            </button>
-        </a>
-        <a href="https://tally.so/r/31bK4p">
-            <button
-                class="styled-button"
-                style="background-color: #9A114F"
-                onmouseover="this.style.backgroundColor='#54092b';"
-                onmouseout="this.style.backgroundColor='#9A114F';"
-            >
-                👍 Join Trackle™️
-            </button>
-        </a><br>
+    <button
+        class="styled-button"
+        id="exploreMoreButton"
+        style="background-color: #9A114F;"
+        onmouseover="this.style.backgroundColor='#54092b';"
+        onmouseout="this.style.backgroundColor='#9A114F';"
+    >
+        🌟 Explore More
+    </button>
+
+    <!-- Popup Modal -->
+    <div id="exploreModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close-btn">&times;</span>
+            <a href="https://sb-designs.gitbook.io/trackle">
+                <button class="styled-button">🗨️ Blog</button>
+            </a>
+            <a href="https://sbdesigns.pages.dev">
+                <button class="styled-button">🖱️ SB Designs</button>
+            </a>
+            <a href="https://github.com/SB-Designs/Trackle">
+                <button class="styled-button">📑 Source Code</button>
+            </a>
+            <a href="https://tally.so/r/31bK4p">
+                <button class="styled-button">👍 Join Trackle™️</button>
+            </a>
+        </div>
+    </div>
+<br>
                 <p>
             <b>Trackle™️ &#169; SB Designs 2024</b><br />The name Trackle and its
             logo are trademarks of SB Designs.<br/>Thanks to TfL for the roundel, line names, etc.<br>Trackle™️ is not affiliated with TfL or any other transport providers.<br>Version 3.0.1
@@ -178,6 +168,29 @@
 
       // Listen for changes in theme preference
       window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateThemeColor);
+    </script>
+    <script>document.addEventListener("DOMContentLoaded", () => {
+    const exploreButton = document.getElementById("exploreMoreButton");
+    const exploreModal = document.getElementById("exploreModal");
+    const closeModal = document.getElementById("closeModal");
+
+    // Show modal when "Explore More" is clicked
+    exploreButton.addEventListener("click", () => {
+        exploreModal.style.display = "block";
+    });
+
+    // Hide modal when "X" button is clicked
+    closeModal.addEventListener("click", () => {
+        exploreModal.style.display = "none";
+    });
+
+    // Hide modal when clicking outside the modal content
+    window.addEventListener("click", (event) => {
+        if (event.target === exploreModal) {
+            exploreModal.style.display = "none";
+        }
+    });
+});
     </script>
     <script src="pwa-install.js" defer></script>
 
