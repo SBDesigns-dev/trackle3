@@ -102,31 +102,32 @@
     </button>
 
     <!-- Popup Modal -->
-    <div id="exploreModal" class="modal">
-        <div class="modal-content">
-            <span id="closeModal" class="close-btn">&times;</span>
-            <a href="https://sb-designs.gitbook.io/trackle">
-                <button class="styled-button"        style="background-color: #9A114F;"
-        onmouseover="this.style.backgroundColor='#54092b';"
-        onmouseout="this.style.backgroundColor='#9A114F';">🗨️ Blog</button>
-            </a>
-            <a href="https://sbdesigns.pages.dev">
-                <button class="styled-button"        style="background-color: #9A114F;"
-        onmouseover="this.style.backgroundColor='#54092b';"
-        onmouseout="this.style.backgroundColor='#9A114F';">🖱️ SB Designs</button>
-            </a>
-            <a href="https://github.com/SB-Designs/Trackle">
-                <button class="styled-button"        style="background-color: #9A114F;"
-        onmouseover="this.style.backgroundColor='#54092b';"
-        onmouseout="this.style.backgroundColor='#9A114F';">📑 Source Code</button>
-            </a>
-            <a href="https://tally.so/r/31bK4p">
-                <button class="styled-button"        style="background-color: #9A114F;"
-        onmouseover="this.style.backgroundColor='#54092b';"
-        onmouseout="this.style.backgroundColor='#9A114F';">👍 Join Trackle™️</button>
-            </a>
-        </div>
+ <div id="exploreModal" class="modal">
+    <div class="modal-content">
+        <button id="closeModal" class="close-btn">&times;</button>
+        <a href="https://sb-designs.gitbook.io/trackle">
+            <button class="styled-button" style="background-color: #9A114F;"
+                onmouseover="this.style.backgroundColor='#54092b';"
+                onmouseout="this.style.backgroundColor='#9A114F';">🗨️ Blog</button>
+        </a>
+        <a href="https://sbdesigns.pages.dev">
+            <button class="styled-button" style="background-color: #9A114F;"
+                onmouseover="this.style.backgroundColor='#54092b';"
+                onmouseout="this.style.backgroundColor='#9A114F';">🖱️ SB Designs</button>
+        </a>
+        <a href="https://github.com/SB-Designs/Trackle">
+            <button class="styled-button" style="background-color: #9A114F;"
+                onmouseover="this.style.backgroundColor='#54092b';"
+                onmouseout="this.style.backgroundColor='#9A114F';">📑 Source Code</button>
+        </a>
+        <a href="https://tally.so/r/31bK4p">
+            <button class="styled-button" style="background-color: #9A114F;"
+                onmouseover="this.style.backgroundColor='#54092b';"
+                onmouseout="this.style.backgroundColor='#9A114F';">👍 Join Trackle™️</button>
+        </a>
     </div>
+</div>
+
 <br>
                 <p>
             <b>Trackle™️ &#169; SB Designs 2024</b><br />The name Trackle and its
@@ -185,20 +186,24 @@
     // Show modal when "Explore More" is clicked
     exploreButton.addEventListener("click", () => {
         exploreModal.style.display = "block";
+        document.body.classList.add("modal-open"); // Add blur and interaction block
     });
 
     // Hide modal when "X" button is clicked
     closeModal.addEventListener("click", () => {
         exploreModal.style.display = "none";
+        document.body.classList.remove("modal-open"); // Remove blur and interaction block
     });
 
     // Hide modal when clicking outside the modal content
     window.addEventListener("click", (event) => {
         if (event.target === exploreModal) {
             exploreModal.style.display = "none";
+            document.body.classList.remove("modal-open");
         }
     });
 });
+
     </script>
     <script src="pwa-install.js" defer></script>
 
