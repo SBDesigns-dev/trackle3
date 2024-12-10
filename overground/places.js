@@ -112,7 +112,7 @@ const sourcePlaces = [
   { name: "CLAPHAM HIGH STREET", pt: [51.4650, -0.1320] },
   { name: "WANDSWORTH ROAD", pt: [51.4670, -0.1440] },
   { name: "BATTERSEA PARK", pt: [51.4770, -0.1480] },
-];
+]; /* The list of place names and their GPS coordinates */
 
 App.prototype.initializePlaces = function () {
   console.log("initialize places");
