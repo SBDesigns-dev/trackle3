@@ -64,7 +64,7 @@ class App {
 
 const roundelIcon = L.icon({
   iconUrl:
-    "https://cdn.glitch.global/dd79283f-e3f0-415c-8229-170f3b139b79/Trams_roundel.svg.png?v=1722597837464",
+    "/tramsicon.png",
   iconSize: [32, 32],
 });
 
