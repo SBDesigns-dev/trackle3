@@ -69,7 +69,7 @@ class App {
 // Icon for marking places on the map
 const roundelIcon = L.icon({
   iconUrl:
-    "https://cdn.glitch.global/46c002a9-06ae-4e8c-a823-22c55b1e128a/London_Overground_logo.svg.png?v=1722597669528",
+    "/overgroundicon.png",
   iconSize: [32, 32], // Size of the icon in pixels
 });
 
